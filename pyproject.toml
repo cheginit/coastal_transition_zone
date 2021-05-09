@@ -1,0 +1,15 @@
+[tool.nbqa.addopts]
+flake8 = [
+    "--extend-ignore=E203,E402,E502,E371,W502,D107,D105",
+    "--exclude=.ipynb_checkpoints",
+    "--max-line-length=100"
+]
+
+isort = [
+"--profile=black",
+"--multi-line=3",
+"--trailing-comma",
+"--force-grid-wrap=0",
+"--use-parentheses",
+"--line-length=100",
+}

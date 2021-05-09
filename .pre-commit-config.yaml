@@ -28,3 +28,8 @@ repos:
         files: notebooks
         name: Format notebooks; upgrade syntax to Python 3.6+ by pyupgrade
         args: [--nbqa-mutate]
+
+      - id: nbqa-flake8
+        files: notebooks
+        name: Format notebooks; lint with flake8
+        args: [--nbqa-mutate]
