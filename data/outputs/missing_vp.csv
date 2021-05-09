@@ -1,3 +1,3 @@
- M2 S2 K1 O1
-C3  "R30, D570, S07" "Ref, R20, R30, D570, S07" "Ref, R30, D570"
-C1   "Ref, R20, R30, S31" "Ref, R20, R30, S31"
+ M2 K1 O1 M4
+C1  "Ref, R20, R30, S31" "Ref, R20, R30, S31" "Ref, R20, R30"
+C3  "Ref, R20, R30, D570, S07" "Ref, R30, D570"
