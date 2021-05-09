@@ -1,4 +1,4 @@
-name: binder
+name: ctz
 channels:
   - conda-forge
   - nodefaults
@@ -8,6 +8,7 @@ dependencies:
   - owslib
   - defusedxml
   - requests
+  - requests_cache
   - aiohttp
   - chardet
   - aiodns
@@ -23,33 +24,33 @@ dependencies:
   - orjson
   - simplejson
   - lxml
-  - openpyxl
   - dask-core
-  - networkx
   - matplotlib-base
   - folium
+  - openpyxl
 
   # HyRiver packages
-  - pygeoogc=0.10.1
-  - pygeoutils=0.10.1
-  - pynhd=0.10.1
-  - py3dep=0.10.1
-  - pydaymet=0.10.2
-  - pygeohydro=0.10.2
+  - pygeoogc
+  - async_retriever
+  - pygeohydro
 
   # Speedups
   - bottleneck
   - pygeos
+  - rtree
 
   # Other third-party deps
-  - descartes
-  - cartopy
-  - cmocean
   - mapclassify
+  - joblib
+  - utide
+  - xskillscore
+  - scipy
   - contextily
-  - osmnx
   - tqdm
   - pytables
-  - ffmpeg
   - jupyterlab_widgets
   - ipywidgets
+
+  - pip
+  - pip:
+    - aiohttp-client-cache
