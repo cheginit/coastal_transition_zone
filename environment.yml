@@ -48,6 +48,8 @@ dependencies:
   - contextily
   - tqdm
   - pytables
+  - jupyterlab
+  - nb_black
   - jupyterlab_widgets
   - ipywidgets
 
