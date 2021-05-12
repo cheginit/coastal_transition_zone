@@ -1,4 +1,9 @@
 from pathlib import Path
+import os
+
+import geopandas as gpd
+import pyproj
+from shapely.geometry import Polygon
 
 
 def read_config(fname):
@@ -39,3 +44,30 @@ def get_case(class_no, scenario=None):
     if scenario is None:
         return scenarios
     return scenarios[scenario]
+
+
+def clip_geom(geodf, geom, crs, clip_name, root):
+    if not geodf.crs.is_exact_same(pyproj.CRS.from_user_input(crs)):
+        geodf = geodf.to_crs(crs)
+
+    cfile = Path(root, f"{clip_name}.gpkg")
+    if not cfile.exists():
+        clipped = gpd.clip(geodf, geom).reset_index(drop=True)
+        clipped.to_file(cfile)
+    else:
+        clipped = gpd.read_file(cfile)
+
+    return clipped
+
+
+def geo_census(data_name, geom, crs, clip_name, root):
+    os.makedirs(Path(root), exist_ok=True)
+    cfile = Path(root, f"us_{data_name}.gpkg")
+    if not cfile.exists():
+        census = gpd.read_file(
+            f"https://www2.census.gov/geo/tiger/TIGER2020/{data_name.upper()}/tl_2020_us_{data_name}.zip"
+        )
+        census.to_file(cfile)
+    else:
+        census = gpd.read_file(cfile)
+    return clip_geom(census, geom, crs, clip_name, root)
