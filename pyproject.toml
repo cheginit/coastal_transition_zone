@@ -12,4 +12,4 @@ isort = [
 "--force-grid-wrap=0",
 "--use-parentheses",
 "--line-length=100",
-}
+]
