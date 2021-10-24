@@ -3,18 +3,10 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - python>=3.9
-
-  # HyRiver packages
+  - python=3.9
   - pygeoogc
   - async_retriever
   - pygeohydro
-
-  # Speedups
-  - bottleneck
-  - pygeos
-
-  # Other third-party deps
   - mapclassify
   - joblib
   - utide
@@ -24,3 +16,8 @@ dependencies:
   - tqdm
   - pytables
   - ipywidgets
+  - pillow
+
+  # Speedups
+  - bottleneck
+  - pygeos
